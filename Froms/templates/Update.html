@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> update </title>
+</head>
+<body>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label>Name: </label>
+            <input type="text" name="name" value="{{pro.name}}">
+            <br><br>
+
+            <label>E-mail:</label>
+            <input type="email" name="email" value="{{pro.email}}">
+            <br><br>
+            <br><br>
+            
+            <div class="form-group">
+                {% if pro.proPic %}
+                     <img src="{{ pro.proPic.url }}" alt="" width='80px' height="100px">
+                {% endif %}
+                <label for="worker_image">Image</label>
+                <input type="file" class="form-control" id="worker_image" placeholder="Uplode Your Photo"
+                       name="fileupload">
+            </div>
+            <br>
+            <br><br>
+            <input type="submit">
+        </form>
+    
+
+    
+
+</body>
+</html>
